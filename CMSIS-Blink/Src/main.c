@@ -16,9 +16,63 @@
  ******************************************************************************
  */
 #include <stdint.h>
+#include "stm32h743xx.h"
+
+static int mcu_pwr_init(void);
+static int mcu_flash_init(void);
+static int mcu_rcc_init(void);
+static void mcu_error(void);
 
 int main(void)
 {
+	int mcu_status = 0;
+
+//	Initialize the power supply
+	mcu_status = mcu_pwr_init();
+	if(!mcu_status)
+	{
+		mcu_error();
+	}
+
+//	Initialize the Flash memory
+	mcu_status = mcu_flash_init();
+	if(!mcu_status)
+	{
+		mcu_error();
+	}
+
+//	Initialize the Clock magnament
+	mcu_status = mcu_rcc_init();
+	if(!mcu_status)
+	{
+		mcu_error();
+	}
+
+
     /* Loop forever */
 	for(;;);
+}
+
+
+static int mcu_pwr_init(void)
+{
+	int ret = 0;
+	return ret;
+}
+
+static int mcu_flash_init(void)
+{
+	int ret = 0;
+	return ret;
+}
+
+static int mcu_rcc_init(void)
+{
+	int ret = 0;
+	return ret;
+}
+
+static void mcu_error(void)
+{
+	while(1);
 }
