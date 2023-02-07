@@ -84,8 +84,8 @@ static int mcu_pwr_init(void)
  * */
 	int ret = 0;
 	/*
-	For the moment I will keep the default configuration using Domain3 and Scale3 and the
-	LDO enabled.
+		For the moment I will keep the default configuration using Domain3 and Scale3 and the
+		LDO enabled.
 	 */
 	return ret;
 }
