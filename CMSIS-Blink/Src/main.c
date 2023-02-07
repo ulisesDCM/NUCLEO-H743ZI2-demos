@@ -53,10 +53,8 @@ int main(void)
 	for(;;);
 }
 
-
-static int mcu_pwr_init(void)
-{
-/*	1. When the system is powered on, the POR monitors VDD supply. Once VDD is above the
+/*
+ * 1. When the system is powered on, the POR monitors VDD supply. Once VDD is above the
  * POR threshold level, the voltage regulator is enabled in the default supply
  * configuration:
  * 		The Voltage converter output level is set at 1.0 V in accordance with the VOS3
@@ -82,6 +80,8 @@ static int mcu_pwr_init(void)
  * 		b)Once ACTVOSRDY indicates that voltage levels are valid, the system is in normal
  * 		Run mode, write accesses to RAMs are allowed and VOS can be changed.
  * */
+static int mcu_pwr_init(void)
+{
 	int ret = 0;
 	/*
 		For the moment I will keep the default configuration using Domain3 and Scale3 and the
@@ -90,6 +90,17 @@ static int mcu_pwr_init(void)
 	return ret;
 }
 
+/*
+ * 	This section will adjust the read timing constraints
+ * 	The embedded flash memory clock must be enabled and running before reading data from
+ * 	non-volatile memory.
+ *
+ * 	To correctly read data from flash memory, the number of wait states (LATENCY) must be
+ * 	correctly programmed in the flash access control register (FLASH_ACR) according to the
+ * 	embedded flash memory AXI interface clock frequency (sys_ck) and the internal voltage
+ * 	range of the device (V core ).
+ * 	For more information, please refer to table 17. on page 160, of the reference manual.
+ * */
 static int mcu_flash_init(void)
 {
 	int ret = 0;
