@@ -83,6 +83,10 @@ static int mcu_pwr_init(void)
  * 		Run mode, write accesses to RAMs are allowed and VOS can be changed.
  * */
 	int ret = 0;
+	/*
+	For the moment I will keep the default configuration using Domain3 and Scale3 and the
+	LDO enabled.
+	 */
 	return ret;
 }
 
