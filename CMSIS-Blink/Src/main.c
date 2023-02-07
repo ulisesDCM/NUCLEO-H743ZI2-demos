@@ -41,7 +41,7 @@ int main(void)
 		mcu_error();
 	}
 
-//	Initialize the Clock magnament
+//	Initialize the Clock management.
 	mcu_status = mcu_rcc_init();
 	if(!mcu_status)
 	{
@@ -75,7 +75,7 @@ static int mcu_pwr_init(void)
  * 	has been configured, the ACTVOSRDY bit in PWR control status register 1
  * 	(PWR_CSR1) shall be checked to guarantee valid voltage levels:
  *
- * 		a) As long as ACTVOSRDY indicates that voltage levels are invalid, the system is in
+ * 		a) As long as ACTVOSRDY indicates that voltage levels are invalid, tError Code Correctionhe system is in
  * 		Run* mode, write accesses to the RAMs are not permitted and VOS shall not be
  * 		changed.
  *
