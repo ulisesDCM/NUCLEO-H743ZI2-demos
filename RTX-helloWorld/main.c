@@ -80,7 +80,14 @@ __task void init(void)
 
 __asm void my_strcpy(const char *src, char *dest)
 {
-
+	loop:
+		LDRB r2,[r0]	;Load in r2 the value pointed by r0 (src)
+		ADDS r0, #1		;Increment the pointer r0 (src) by 1
+		STRB r2, [r1] ;Store in the pointed byte (dest) the value of R2
+		ADDS r1,#1		;Increment the dest pointer.
+		CMP r2, #0		;Compare if the string is over
+		BNE loop 			;Check the equal flag and if not zero, then jump to label
+	BX	lr					;Return from function call
 }
 
 __asm void my_capitalize(char *str)
@@ -92,4 +99,6 @@ int main(void)
 {
 	init_led_gpio();	//Initialize GPIOB
 	os_sys_init(init);		//Initialize RTX and create temporary task init.
+	
+	
 }
