@@ -1,0 +1,26 @@
+Dependencies for Project 'RTX-HelloWorld', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARM_Compiler_5.06u7
+F (.\main.c)(0x64545AF4)(--gnu -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32H743xx -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7xx.h)(0x63C07958)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h)(0x63C07958)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm7.h)(0x62701DCE)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8F0FB2)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cachel1_armv7.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\system_stm32h7xx.h)(0x63C07958)
+F (RTE/Device/STM32H743ZITx/startup_stm32h743xx.s)(0x63C07958)(--cpu Cortex-M7.fp.dp -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "STM32H743xx SETA 1" --pd "_RTE_ SETA 1"--list .\listings\startup_stm32h743xx.lst --xref -o .\objects\startup_stm32h743xx.o --depend .\objects\startup_stm32h743xx.d)
+F (RTE/Device/STM32H743ZITx/system_stm32h7xx.c)(0x63C07958)(--gnu -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32H743xx -D_RTE_-o .\objects\system_stm32h7xx.o --omf_browse .\objects\system_stm32h7xx.crf --depend .\objects\system_stm32h7xx.d)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h7xx.h)(0x63C07958)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\stm32h743xx.h)(0x63C07958)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm7.h)(0x62701DCE)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8F0FB2)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armcc.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cachel1_armv7.h)(0x62701DCE)
+I (C:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include\system_stm32h7xx.h)(0x63C07958)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\math.h)(0x5E8F0FB2)
