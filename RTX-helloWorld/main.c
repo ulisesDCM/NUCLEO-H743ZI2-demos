@@ -78,6 +78,16 @@ __task void init(void)
 	os_tsk_delete_self();
 }
 
+__asm void my_strcpy(const char *src, char *dest)
+{
+
+}
+
+__asm void my_capitalize(char *str)
+{
+	
+}
+
 int main(void)
 {
 	init_led_gpio();	//Initialize GPIOB
