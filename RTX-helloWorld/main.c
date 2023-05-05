@@ -80,7 +80,7 @@ __task void init(void)
 
 __asm void my_strcpy(const char *src, char *dest)
 {
-	loop:
+loop
 		LDRB r2,[r0]	;Load in r2 the value pointed by r0 (src)
 		ADDS r0, #1		;Increment the pointer r0 (src) by 1
 		STRB r2, [r1] ;Store in the pointed byte (dest) the value of R2
@@ -97,8 +97,14 @@ __asm void my_capitalize(char *str)
 
 int main(void)
 {
-	init_led_gpio();	//Initialize GPIOB
-	os_sys_init(init);		//Initialize RTX and create temporary task init.
+	//init_led_gpio();	//Initialize GPIOB
+	//os_sys_init(init);		//Initialize RTX and create temporary task init.
 	
+	const char source[] = "ulises";
+	char dest[20] = {0};
+	
+	my_strcpy(source, dest);
+	
+	while(1);
 	
 }
