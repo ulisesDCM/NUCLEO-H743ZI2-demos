@@ -1,13 +1,32 @@
 /* 
 		NUCLEO-H743ZI2 User LEDs
+			User LD1: 	a green user LED is connected to the STM32 I/O PB0 (SB120 ON and SB119
+									OFF) or PA5 (SB119 ON and SB120 OFF) 
+			User LD2:		User LD2: a blue user LED is connected to PB7.
+			User LD3:		User LD3: a red user LED is connected to PB14.
+			
+			
+		Mixing Assembly Language and C Code:		
+			Calling functions and Passing Arguments
+			When a function calls a subroutine, it places the return address in the link register LR. 
+			The arguments (if any) are passed in registers r0 through r3, starting with r0. 
+			If there are more than four arguments, or they are too large to fit in 32-bit registers, 
+			they are passed on the stack.
+			
+		Temporary storage
+			Registers r0 through r3 can be used for temporary storage if 
+			they were not used for arguments, or if the argument value is no longer needed.
 		
-		User LD1: 	a green user LED is connected to the STM32 I/O PB0 (SB120 ON and SB119
-								OFF) or PA5 (SB119 ON and SB120 OFF) 
-		
-		User LD2:		User LD2: a blue user LED is connected to PB7.
-		
-		User LD3:		User LD3: a red user LED is connected to PB14.
-		
+		Preserved Registers
+			Registers r4 through r11 must be preserved by a subroutine. 
+			If any must be used, they must be saved first and restored before returning. 
+			This is typically done by pushing them to and popping them from the stack.
+
+		Returning from Functions
+			Because the return address has been stored in the link register, the BX LR 
+			instruction will reload the pc with the return address value from the LR. 
+			If the function returns a value, it will be passed through register r0
+
 */
 #include "stm32h7xx.h"
 #include "RTL.h"
@@ -92,7 +111,21 @@ loop
 
 __asm void my_capitalize(char *str)
 {
+again
+	LDRB r1,[r0];
+	CMP r1,#'a'-1
+	BLS skip
 	
+	CMP r1,#'z'
+	BHI skip
+	
+	SUBS r1, #32
+	STRB r1,[r0]
+skip
+	ADDS r0,r0,#1
+	CMP r1,#0
+	BNE again
+	BX lr
 }
 
 int main(void)
@@ -104,6 +137,7 @@ int main(void)
 	char dest[20] = {0};
 	
 	my_strcpy(source, dest);
+	my_capitalize(dest);
 	
 	while(1);
 	
