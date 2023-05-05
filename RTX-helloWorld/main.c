@@ -10,6 +10,11 @@
 		
 */
 #include "stm32h7xx.h"
+#include "RTL.h"
+
+OS_TID taskID1;
+OS_TID taskID2;
+
 typedef enum
 {
 	GREEN = GPIO_ODR_OD0_Pos,
@@ -45,19 +50,36 @@ static void toogle_led(eUSER_LED led)
 	MODIFY_REG(GPIOB->ODR, (1<<led), (state<<led));
 }	
 
-int main(void)
+__task void toogle_green_led(void)
 {
-	init_led_gpio();
-	
 	while(1)
 	{
+		int i=0;
 		toogle_led(GREEN);
-		toogle_led(GREEN);
-
-		toogle_led(RED);
-		toogle_led(RED);
-		
-		toogle_led(BLUE);
-		toogle_led(BLUE);
+		for(i=0;i<1000000;i++);	//Delay
 	}
+}
+
+__task void toogle_red_led(void)
+{
+	while(1)
+	{
+		int i=0;
+		toogle_led(RED);
+		for(i=0;i<1000000;i++);	//Delay
+	}
+}
+
+__task void init(void)
+{
+	taskID1 = os_tsk_create(toogle_green_led, 0);
+	taskID2 = os_tsk_create(toogle_red_led, 0);
+	
+	os_tsk_delete_self();
+}
+
+int main(void)
+{
+	init_led_gpio();	//Initialize GPIOB
+	os_sys_init(init);		//Initialize RTX and create temporary task init.
 }

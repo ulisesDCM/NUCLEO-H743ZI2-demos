@@ -1276,12 +1276,13 @@ ARM Macro Assembler    Page 20
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.dp --apcs=
 interwork --depend=.\objects\startup_stm32h743xx.d -o.\objects\startup_stm32h74
-3xx.o -I.\RTE\_Target_1 -IC:\Users\ulises\AppData\Local\Arm\Packs\ARM\CMSIS\5.9
-.0\CMSIS\Core\Include -IC:\Users\ulises\AppData\Local\Arm\Packs\Keil\STM32H7xx_
-DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include --predefine="__UVISION_VERS
-ION SETA 538" --predefine="_RTE_ SETA 1" --predefine="STM32H743xx SETA 1" --pre
-define="_RTE_ SETA 1" --list=.\listings\startup_stm32h743xx.lst RTE/Device/STM3
-2H743ZITx/startup_stm32h743xx.s
+3xx.o -IC:\Keil_v5\ARM\RV31\Inc -I.\RTE\_Target_1 -IC:\Users\ulises\AppData\Loc
+al\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include -IC:\Users\ulises\AppData\Local
+\Arm\Packs\Keil\STM32H7xx_DFP\3.1.0\Drivers\CMSIS\Device\ST\STM32H7xx\Include -
+-predefine="__RTX SETA 1" --predefine="__UVISION_VERSION SETA 538" --predefine=
+"_RTE_ SETA 1" --predefine="STM32H743xx SETA 1" --predefine="_RTE_ SETA 1" --li
+st=.\listings\startup_stm32h743xx.lst RTE/Device/STM32H743ZITx/startup_stm32h74
+3xx.s
 
 
 
@@ -2962,4 +2963,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-506 symbols in table
+507 symbols in table
